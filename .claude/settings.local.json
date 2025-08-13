@@ -1,0 +1,26 @@
+{
+  "env": {
+    "BASH_DEFAULT_TIMEOUT_MS": "90000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bunx:*)",
+      "Bash(bun:*)",
+      "Bash(node:*)",
+      "Bash(npm run *:*)",
+      "Read(./apps/**)",
+      "Read(./packages/**)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./apps/**/.env*)",
+      "Read(./packages/**/.env*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}

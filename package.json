@@ -1,0 +1,30 @@
+{
+  "name": "bitacora",
+  "private": true,
+  "module": "index.ts",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:web": "cd apps/web && bun run dev",
+    "dev:api": "cd apps/api && bun run dev",
+    "build": "turbo run build",
+    "build:web": "cd apps/web && bun run build",
+    "build:api": "cd apps/api && bun run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f db",
+    "db:migrate": "cd apps/api && bun run migration:run",
+    "db:migrate:generate": "cd apps/api && bun run migration:generate",
+    "db:migrate:revert": "cd apps/api && bun run migration:revert"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "turbo": "^2.5.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

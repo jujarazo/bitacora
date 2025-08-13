@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { databaseConfig } from './config';
 import { typeormConfig } from './database';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { typeormConfig } from './database';
       inject: [ConfigService],
       useFactory: typeormConfig,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
